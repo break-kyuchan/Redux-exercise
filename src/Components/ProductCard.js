@@ -1,14 +1,19 @@
 import React from "react";
+import {useDispatch} from 'react-redux';
 import styled from "styled-components";
 import CartIcon from "./CartIcon";
+import {addCart} from "../store/actions/index"
 
-export default function ProductCard({ addToCart, item }) {
+export default function ProductCard({ item }) {
+  
+  const dispatch = useDispatch(); //dispatch를 통해 액션객체를 받아오는데 아래 onClick함수안에 클릭스 카트숫자가 올라가는걸 확인 
+  
   return (
     <Card>
       <Img src={item.product_img} />
       <Title>{item.product_name}</Title>
       <Price>{item.price.toLocaleString()} 원</Price>
-      <AddCartBtn onClick={() => addToCart()}>
+      <AddCartBtn onClick={() => dispatch(addCart(item))}> 
         <CartIcon width="16" height="16" />
         <span>장바구니 담기</span>
       </AddCartBtn>
