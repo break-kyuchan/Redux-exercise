@@ -6,7 +6,7 @@ import {addCart} from "../store/actions/index"
 
 export default function ProductCard({ item }) {
   
-  const dispatch = useDispatch(); //dispatch를 통해 액션객체를 받아오는데 아래 onClick함수안에 클릭스 카트숫자가 올라가는걸 확인 
+  const dispatch = useDispatch(); //dispatch를 통해 액션객체는 리듀서로 전달 되고, 리듀서 내에 미리 정의해둔 조건문과 action.type에 따라 스토 업데이트
   
   return (
     <Card>

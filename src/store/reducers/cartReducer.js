@@ -1,9 +1,9 @@
 const cartReducer =(state = INITIAL_STATE, action)=>{
     switch(action.type){
         case "ADD_ITEM" :
-            return [...state, action.payload]
+            return [...state, action.payload] // payload : item
         case "DELETE_ITEM" :
-            return [...action.payload]
+            return [...action.payload] // payload : items
         default : return state
     }
 }
